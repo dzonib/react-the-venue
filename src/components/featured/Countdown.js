@@ -5,7 +5,7 @@ import moment from 'moment';
 
 class Countdown extends Component {
 	state = {
-    deadline: 'Dec, 16, 2018',
+    deadline: '2019-02-08',
     days: '0',
     hours: '0',
     minutes: '0',
@@ -15,12 +15,11 @@ class Countdown extends Component {
   getTimeUntill = (deadline) => {
 
     // http://zetcode.com/javascript/momentjs/
-    // moment tut
+    // moment examples
 
     const time = moment(deadline);
     const date = moment([]);
 
-    // const timeTest = moment(Date.parse(new Date())).format("dddd, MMMM, D, YYYY, s");
 
     const difference = time.diff(date);
 
@@ -28,8 +27,6 @@ class Countdown extends Component {
 
     const dayDiff = time.diff(date, 'days');
 
-    console.log(dayDiff);
-    
 
     const days = dayDiff;
     const hours = momentizeDifference.get('hour');
@@ -46,6 +43,7 @@ class Countdown extends Component {
   }
 
   componentDidMount() {
+    this.getTimeUntill(this.state.deadline)
     setInterval(() => this.getTimeUntill(this.state.deadline) , 1000)
   }
 
