@@ -32,7 +32,7 @@ export default class Header extends Component {
   };
 
   handleCloseDrawer = (value) => {
-    this.setState({right: value})
+    this.setState({right: value}) 
   }
 
 	render() {
